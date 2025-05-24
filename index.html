@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="logo.png">
+    <title>MusikMan</title>
+</head>
+
+<body>
+
+
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>MusikMan</h1>
+                <p>Ваш провідник у світі музики</p>
+            </div>
+        </div>
+    </header>
+
+
+
+    <div class="big-photo">
+
+
+    </div>
+
+
+    <div class="container-notebook" v-cloak>
+
+        <div class="container pp">
+
+            <div class="menu-wrap">
+                <ul class="menu-list">
+                    <li v-bind:class="{active: currentIndex ==  i}" class="list-item" v-for="(item, i) in nameNotebook"
+                        v-on:click="ShowNotebook(i)">
+                        {{item}}
+                    </li>
+                </ul>
+
+                <div class="search-panel">
+                    <input placeholder="Введіть параметри пошуку" type="text" id="searh-inp" v-model="searchText"
+                        v-on:keyup.enter="searchFunction()">
+                </div>
+            </div>
+
+            <div class="programm-div">
+                <div class="content-wrap">
+                    <div class="card" v-for="(item, i) in newArr">
+                        <div class="item-img">
+                            <img class="ii" :src="item.Image" :alt="item.model">
+                        </div>
+                        <h3 class="ii">{{item.model}}</h3>
+                        <p>{{item.price}}</p>
+                        <div class="details" v-if="showDetailsVar== true && detailI == i">
+                            <div class="info ">
+                                <div class="">
+
+                                </div>
+                                <div class="">
+                                    <h3 class="ii">{{item.model}}</h3>
+                                    <p>{{item.description}}</p>
+                                    <p>{{item.description1}}</p>
+                                    <p>{{item.description2}}</p>
+                                    <p>{{item.description3}}</p>
+                                    <p>{{item.description4}}</p>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="btn" v-on:click="showDetails(i)">Деталі</button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="pusto-div" v-if="newArr.length ==0">
+                <p>No find</p>
+            </div>
+
+
+        </div>
+
+        <div>
+            <div class="modal-window">
+                <p class="btn-1 btn-close-modal"><button>x</button></p>
+                <h3>Наталя</h3>
+                <p>1 метр від вас</p>
+            </div>
+        </div>
+
+    </div>
+
+
+
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-auto">
+                    <div class="thr">
+                        <a class="link-footer" href="tel:+380974824234">
+                            <p>+38 097 482 42 34</p>
+                        </a>
+
+                    </div>
+                </div>
+                <div class="col-md-auto">
+                    <p>Місце знаходження: м. Біла Церква, вул.Героїв небесної сотні, 36</p>
+                </div>
+                <div class="col-md-auto">
+                    <i class="fa-brands fa-instagram"></i>
+                </div>
+            </div>
+        </div>
+
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
+        crossorigin="anonymous"></script>
+
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
