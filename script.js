@@ -44,7 +44,7 @@ let noteApp = {
                     name: 'Гітари',
                     model: 'Електрогітара YAMAHA',
                     price: 15800,
-                    Image: 'guitaryamaha.jpg',
+                    Image: 'Guitaryamaha.jpg',
                     description: 'Лади, кількість: 23 ',
                     description1: 'Розмір гітари: повнорозміри',
                     description2: 'Ширина накладки грифа (у верхнього порожка), мм: 42',
